@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		994365FD4443A806406EE6D7 /* Pods_AppFriendsDemo_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC51E6C85A67CEC99861C4F /* Pods_AppFriendsDemo_Swift.framework */; };
 		AF338C831C9288830001B253 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF338C821C9288830001B253 /* AppDelegate.swift */; };
 		AF338C851C9288830001B253 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF338C841C9288830001B253 /* ViewController.swift */; };
 		AF338C881C9288830001B253 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF338C861C9288830001B253 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4AC51E6C85A67CEC99861C4F /* Pods_AppFriendsDemo_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppFriendsDemo_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E7BFD3A15D6CF93CF1A7BFE /* Pods-AppFriendsDemo_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFriendsDemo_Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppFriendsDemo_Swift/Pods-AppFriendsDemo_Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		AF338C7F1C9288830001B253 /* AppFriendsDemo_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFriendsDemo_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF338C821C9288830001B253 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF338C841C9288830001B253 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,8 @@
 		AF338C891C9288830001B253 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF338C8C1C9288830001B253 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF338C8E1C9288830001B253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF338C941C928C360001B253 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		C7289A43BB5351BFFCC7595B /* Pods-AppFriendsDemo_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFriendsDemo_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppFriendsDemo_Swift/Pods-AppFriendsDemo_Swift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +34,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				994365FD4443A806406EE6D7 /* Pods_AppFriendsDemo_Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E571D13CB396A03333AFEBF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4AC51E6C85A67CEC99861C4F /* Pods_AppFriendsDemo_Swift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A1C467E07311A48DC7FFD5E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E7BFD3A15D6CF93CF1A7BFE /* Pods-AppFriendsDemo_Swift.debug.xcconfig */,
+				C7289A43BB5351BFFCC7595B /* Pods-AppFriendsDemo_Swift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AF338C761C9288830001B253 = {
 			isa = PBXGroup;
 			children = (
 				AF338C811C9288830001B253 /* AppFriendsDemo_Swift */,
 				AF338C801C9288830001B253 /* Products */,
+				2A1C467E07311A48DC7FFD5E /* Pods */,
+				1E571D13CB396A03333AFEBF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +85,7 @@
 				AF338C891C9288830001B253 /* Assets.xcassets */,
 				AF338C8B1C9288830001B253 /* LaunchScreen.storyboard */,
 				AF338C8E1C9288830001B253 /* Info.plist */,
+				AF338C941C928C360001B253 /* Bridging-Header.h */,
 			);
 			path = AppFriendsDemo_Swift;
 			sourceTree = "<group>";
@@ -71,9 +97,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF338C911C9288830001B253 /* Build configuration list for PBXNativeTarget "AppFriendsDemo_Swift" */;
 			buildPhases = (
+				5C5CE1970ED8462E6C3128C9 /* Check Pods Manifest.lock */,
 				AF338C7B1C9288830001B253 /* Sources */,
 				AF338C7C1C9288830001B253 /* Frameworks */,
 				AF338C7D1C9288830001B253 /* Resources */,
+				AAED0E0725852CE4DDF1759B /* Embed Pods Frameworks */,
+				DBB486458E39A9C8D7C01017 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C5CE1970ED8462E6C3128C9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AAED0E0725852CE4DDF1759B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppFriendsDemo_Swift/Pods-AppFriendsDemo_Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBB486458E39A9C8D7C01017 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppFriendsDemo_Swift/Pods-AppFriendsDemo_Swift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AF338C7B1C9288830001B253 /* Sources */ = {
@@ -245,23 +322,27 @@
 		};
 		AF338C921C9288830001B253 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E7BFD3A15D6CF93CF1A7BFE /* Pods-AppFriendsDemo_Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AppFriendsDemo_Swift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hacknocraft.AppFriendsDemo-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AppFriendsDemo_Swift/Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		AF338C931C9288830001B253 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7289A43BB5351BFFCC7595B /* Pods-AppFriendsDemo_Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AppFriendsDemo_Swift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hacknocraft.AppFriendsDemo-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AppFriendsDemo_Swift/Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -284,6 +365,7 @@
 				AF338C931C9288830001B253 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -15,7 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // find your key and secret in admin panel
+        HCWidget.sharedWidget().initializeWithApplicationKey("db", secret: "3MyNWQkQt4cbdSLiRlfFUAtt", configuration: [kHCUseProduction: NSNumber(bool: false), kHCDefaultSocialWidgetOpenDirection: NSNumber(int: Int32(HCSocialWidgetOpenDirection.Left.rawValue))], withLaunchOptions: launchOptions)
+        
+        HCWidget.sharedWidget().loginWithUserInfo([
+            kHCUserName: "haowang",
+            kHCUserAvatar: "https://cdn2.iconfinder.com/data//icons/holloweenavatars/PNG/Frankenstein.png",
+            kHCUserAppID: "11",
+            kHCUserEmail: "haowang@gmail.com"])
+        
+        HCWidget.sharedWidget().blurLayerTintColor = UIColor(red: 19/255.0, green: 36/255.0, blue: 81/255.0, alpha: 1)
+        
         return true
     }
 
@@ -40,7 +51,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    
+    func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
+        
+        return HCWidget.continueUserActivity(userActivity)
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        return HCWidget.openURL(url, sourceApplication: sourceApplication, annotation: annotation)
+    }
 }
 

@@ -19,7 +19,14 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        HCWidget.showSocialWidgetOnViewController(self, viewControllerPath: "/home", disableScreenshot: false) { () -> Void in
+            
+            debugPrint("AppFriends widget is shown now")
+        }
+    }
 }
 
