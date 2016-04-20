@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +23,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        HCWidget.showSocialWidgetOnViewController(self, viewControllerPath: "/home", disableScreenshot: false) { () -> Void in
-            
-            debugPrint("AppFriends widget is shown now")
-        }
+        HCWidget.sharedWidget().showWidgetBubbleOnViewController(self, allowScreenShotSharing: true, atPosition: CGPointMake(self.view.frame.size.width - 60, 160))
     }
 }
 

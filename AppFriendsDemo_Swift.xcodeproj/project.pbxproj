@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		994365FD4443A806406EE6D7 /* Pods_AppFriendsDemo_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC51E6C85A67CEC99861C4F /* Pods_AppFriendsDemo_Swift.framework */; };
 		AF338C831C9288830001B253 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF338C821C9288830001B253 /* AppDelegate.swift */; };
-		AF338C851C9288830001B253 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF338C841C9288830001B253 /* ViewController.swift */; };
+		AF338C851C9288830001B253 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF338C841C9288830001B253 /* LoginViewController.swift */; };
 		AF338C881C9288830001B253 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF338C861C9288830001B253 /* Main.storyboard */; };
 		AF338C8A1C9288830001B253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF338C891C9288830001B253 /* Assets.xcassets */; };
 		AF338C8D1C9288830001B253 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF338C8B1C9288830001B253 /* LaunchScreen.storyboard */; };
@@ -20,12 +20,13 @@
 		9E7BFD3A15D6CF93CF1A7BFE /* Pods-AppFriendsDemo_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFriendsDemo_Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppFriendsDemo_Swift/Pods-AppFriendsDemo_Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		AF338C7F1C9288830001B253 /* AppFriendsDemo_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFriendsDemo_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF338C821C9288830001B253 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF338C841C9288830001B253 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF338C841C9288830001B253 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AF338C871C9288830001B253 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF338C891C9288830001B253 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF338C8C1C9288830001B253 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF338C8E1C9288830001B253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF338C941C928C360001B253 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		AF46EB941CC807A10027986A /* Jaapokkienchance-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jaapokkienchance-Regular.otf"; sourceTree = "<group>"; };
 		C7289A43BB5351BFFCC7595B /* Pods-AppFriendsDemo_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFriendsDemo_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppFriendsDemo_Swift/Pods-AppFriendsDemo_Swift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,8 +80,9 @@
 		AF338C811C9288830001B253 /* AppFriendsDemo_Swift */ = {
 			isa = PBXGroup;
 			children = (
+				AF46EB931CC807890027986A /* Resources */,
 				AF338C821C9288830001B253 /* AppDelegate.swift */,
-				AF338C841C9288830001B253 /* ViewController.swift */,
+				AF338C841C9288830001B253 /* LoginViewController.swift */,
 				AF338C861C9288830001B253 /* Main.storyboard */,
 				AF338C891C9288830001B253 /* Assets.xcassets */,
 				AF338C8B1C9288830001B253 /* LaunchScreen.storyboard */,
@@ -88,6 +90,14 @@
 				AF338C941C928C360001B253 /* Bridging-Header.h */,
 			);
 			path = AppFriendsDemo_Swift;
+			sourceTree = "<group>";
+		};
+		AF46EB931CC807890027986A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AF46EB941CC807A10027986A /* Jaapokkienchance-Regular.otf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF338C851C9288830001B253 /* ViewController.swift in Sources */,
+				AF338C851C9288830001B253 /* LoginViewController.swift in Sources */,
 				AF338C831C9288830001B253 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

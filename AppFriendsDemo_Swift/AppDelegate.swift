@@ -17,13 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         // find your key and secret in admin panel
-        HCWidget.sharedWidget().initializeWithApplicationKey("db", secret: "3MyNWQkQt4cbdSLiRlfFUAtt", configuration: [kHCUseProduction: NSNumber(bool: false), kHCDefaultSocialWidgetOpenDirection: NSNumber(int: Int32(HCSocialWidgetOpenDirection.Left.rawValue))], withLaunchOptions: launchOptions)
+        HCWidget.sharedWidget().initializeWithApplicationKey("db", secret: "3MyNWQkQt4cbdSLiRlfFUAtt", configuration: nil, withLaunchOptions: launchOptions)
         
-        HCWidget.sharedWidget().loginWithUserInfo([
-            kHCUserName: "haowang",
-            kHCUserAvatar: "https://cdn2.iconfinder.com/data//icons/holloweenavatars/PNG/Frankenstein.png",
-            kHCUserAppID: "11",
-            kHCUserEmail: "haowang@gmail.com"])
+        HCWidget.sharedWidget().loginWithUserInfo([kHCUserName: "haowang",
+                                                  kHCUserAvatar: "https://cdn2.iconfinder.com/data//icons/holloweenavatars/PNG/Frankenstein.png",
+                                                  kHCUserAppID: "11",
+                                                  kHCUserEmail: "haowang@gmail.com"]) { (success, error) in
+                                                    
+                                                    
+        }
         
         HCWidget.sharedWidget().blurLayerTintColor = UIColor(red: 19/255.0, green: 36/255.0, blue: 81/255.0, alpha: 1)
         
