@@ -40,5 +40,22 @@
 	<array>
 		<string>Jaapokkienchance-Regular.otf</string>
 	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb665468946927797</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>665468946927797</string>
+	<key>FacebookDisplayName</key>
+	<string>AppFriends</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbauth2</string>
+	</array>
 </dict>
 </plist>

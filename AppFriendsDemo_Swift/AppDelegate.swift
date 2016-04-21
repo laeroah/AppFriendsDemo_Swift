@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,15 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // find your key and secret in admin panel
         HCWidget.sharedWidget().initializeWithApplicationKey("db", secret: "3MyNWQkQt4cbdSLiRlfFUAtt", configuration: nil, withLaunchOptions: launchOptions)
         
-        HCWidget.sharedWidget().loginWithUserInfo([kHCUserName: "haowang",
-                                                  kHCUserAvatar: "https://cdn2.iconfinder.com/data//icons/holloweenavatars/PNG/Frankenstein.png",
-                                                  kHCUserAppID: "11",
-                                                  kHCUserEmail: "haowang@gmail.com"]) { (success, error) in
-                                                    
-                                                    
-        }
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        HCWidget.sharedWidget().blurLayerTintColor = UIColor(red: 19/255.0, green: 36/255.0, blue: 81/255.0, alpha: 1)
         
         return true
     }
@@ -47,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        FBSDKAppEvents.activateApp()
     }
 
     func applicationWillTerminate(application: UIApplication) {
@@ -61,7 +55,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        return HCWidget.openURL(url, sourceApplication: sourceApplication, annotation: annotation)
+        
+        let facebookOpen = FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+        
+        let appFriendsOpen = HCWidget.openURL(url, sourceApplication: sourceApplication, annotation: annotation)
+        
+        return facebookOpen || appFriendsOpen
     }
 }
 

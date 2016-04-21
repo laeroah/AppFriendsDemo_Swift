@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+    
+    @IBOutlet weak var logoLabel: UILabel!
+    @IBOutlet weak var logoSubTextLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let loginButton = FBSDKLoginButton()
+        loginButton.delegate = self
+        loginButton.center = self.view.center
+        self.view .addSubview(loginButton)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,8 +32,30 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    //FBSDKLoginButtonDelegate
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         
-        HCWidget.sharedWidget().showWidgetBubbleOnViewController(self, allowScreenShotSharing: true, atPosition: CGPointMake(self.view.frame.size.width - 60, 160))
+        if error != nil {
+            //login failed
+        }
+        else if result.isCancelled{
+            // cancelled
+        }
+        else  {
+            //login successful
+            
+            self.performSegueWithIdentifier("showLandingSegue", sender: self)
+        }
+    }
+    
+    func loginButtonWillLogin(loginButton: FBSDKLoginButton!) -> Bool {
+        return true
+    }
+    
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        
     }
 }
 

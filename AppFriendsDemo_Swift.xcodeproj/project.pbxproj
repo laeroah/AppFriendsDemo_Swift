@@ -13,6 +13,8 @@
 		AF338C881C9288830001B253 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF338C861C9288830001B253 /* Main.storyboard */; };
 		AF338C8A1C9288830001B253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF338C891C9288830001B253 /* Assets.xcassets */; };
 		AF338C8D1C9288830001B253 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF338C8B1C9288830001B253 /* LaunchScreen.storyboard */; };
+		AF46EB951CC809550027986A /* Jaapokkienchance-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AF46EB941CC807A10027986A /* Jaapokkienchance-Regular.otf */; };
+		AF46EB9A1CC821910027986A /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF46EB991CC821910027986A /* LandingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,7 @@
 		AF338C8E1C9288830001B253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF338C941C928C360001B253 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		AF46EB941CC807A10027986A /* Jaapokkienchance-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jaapokkienchance-Regular.otf"; sourceTree = "<group>"; };
+		AF46EB991CC821910027986A /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		C7289A43BB5351BFFCC7595B /* Pods-AppFriendsDemo_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppFriendsDemo_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppFriendsDemo_Swift/Pods-AppFriendsDemo_Swift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +86,7 @@
 				AF46EB931CC807890027986A /* Resources */,
 				AF338C821C9288830001B253 /* AppDelegate.swift */,
 				AF338C841C9288830001B253 /* LoginViewController.swift */,
+				AF46EB991CC821910027986A /* LandingViewController.swift */,
 				AF338C861C9288830001B253 /* Main.storyboard */,
 				AF338C891C9288830001B253 /* Assets.xcassets */,
 				AF338C8B1C9288830001B253 /* LaunchScreen.storyboard */,
@@ -162,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF338C8D1C9288830001B253 /* LaunchScreen.storyboard in Resources */,
+				AF46EB951CC809550027986A /* Jaapokkienchance-Regular.otf in Resources */,
 				AF338C8A1C9288830001B253 /* Assets.xcassets in Resources */,
 				AF338C881C9288830001B253 /* Main.storyboard in Resources */,
 			);
@@ -223,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF338C851C9288830001B253 /* LoginViewController.swift in Sources */,
+				AF46EB9A1CC821910027986A /* LandingViewController.swift in Sources */,
 				AF338C831C9288830001B253 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
