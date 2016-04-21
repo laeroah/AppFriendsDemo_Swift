@@ -18,11 +18,18 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.extendedLayoutIncludesOpaqueBars = true
+        
         let loginButton = FBSDKLoginButton()
         loginButton.delegate = self
         loginButton.center = self.view.center
         self.view .addSubview(loginButton)
         
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        if FBSDKAccessToken.currentAccessToken() != nil {
+            self.performSegueWithIdentifier("showLandingSegue", sender: self)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,7 +62,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        
+        HCWidget.sharedWidget().logout()
     }
 }
 

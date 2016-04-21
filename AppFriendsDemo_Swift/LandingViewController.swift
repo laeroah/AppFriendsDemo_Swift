@@ -8,8 +8,9 @@
 
 import UIKit
 import FBSDKCoreKit
+import FBSDKLoginKit
 
-class LandingViewController: UIViewController {
+class LandingViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBOutlet weak var userProfileImageView: UIImageView!
     @IBOutlet weak var welcomeLabel: UILabel!
@@ -18,10 +19,11 @@ class LandingViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationItem.hidesBackButton = true
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.title = "Demo"
         self.userProfileImageView.clipsToBounds = true
         self.userProfileImageView.layer.cornerRadius = self.userProfileImageView.frame.size.width/2
-
+        
         FBSDKGraphRequest(graphPath: "me", parameters: nil).startWithCompletionHandler { (connection, result, error) in
             
             if (error == nil) {
@@ -29,11 +31,13 @@ class LandingViewController: UIViewController {
                 
                 let avatarURL = "https://graph.facebook.com/\(result.objectForKey("id")!)/picture?type=large"
                 
+                // login to AppFriends
                 HCWidget.sharedWidget().loginWithUserInfo(
-                    [kHCUserName: result.objectForKey("name")!,
-                     kHCUserAvatar: avatarURL,
-                     kHCUserAppID: result.objectForKey("id")!]) { (success, error) in
-                        
+                    [
+                        kHCUserName: result.objectForKey("name")!,
+                        kHCUserAvatar: avatarURL,
+                        kHCUserAppID: result.objectForKey("id")!
+                    ]) { (success, error) in
                         
                 }
                 
@@ -49,10 +53,40 @@ class LandingViewController: UIViewController {
             }
         }
         
+        let loginButton = FBSDKLoginButton()
+        loginButton.delegate = self
+        var center = self.view.center
+        center.y += 50
+        loginButton.center = center
+        self.view .addSubview(loginButton)
     }
     
     override func viewDidAppear(animated: Bool) {
         
         HCWidget.sharedWidget().showWidgetBubbleOnViewController(self, allowScreenShotSharing: true, atPosition: CGPointMake(self.view.frame.size.width - 60, 160))
+    }
+    
+    
+    //FBSDKLoginButtonDelegate
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        
+        if error != nil {
+            //login failed
+        }
+        else if result.isCancelled{
+            // cancelled
+        }
+        else  {
+            //login successful
+        }
+    }
+    
+    func loginButtonWillLogin(loginButton: FBSDKLoginButton!) -> Bool {
+        return true
+    }
+    
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        HCWidget.sharedWidget().logout()
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
 }
