@@ -53,6 +53,25 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         else  {
             //login successful
             
+            FBSDKGraphRequest(graphPath: "me", parameters: nil).startWithCompletionHandler { (connection, result, error) in
+                
+                if (error == nil) {
+                    print("fetched user:\(result)");
+                    
+                    let avatarURL = "https://graph.facebook.com/\(result.objectForKey("id")!)/picture?type=large"
+                    
+                    // login to AppFriends
+                    HCWidget.sharedWidget().loginWithUserInfo(
+                        [
+                            kHCUserName: result.objectForKey("name")!,
+                            kHCUserAvatar: avatarURL,
+                            kHCUserAppID: result.objectForKey("id")!
+                    ]) { (success, error) in
+                        
+                    }
+                    
+                }
+            }
             self.performSegueWithIdentifier("showLandingSegue", sender: self)
         }
     }

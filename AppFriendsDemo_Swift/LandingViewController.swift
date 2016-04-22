@@ -14,7 +14,15 @@ class LandingViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBOutlet weak var userProfileImageView: UIImageView!
     @IBOutlet weak var welcomeLabel: UILabel!
-
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        HCWidget.sharedWidget().showWidgetBubbleOnViewController(self, allowScreenShotSharing: true, atPosition: CGPointMake(self.view.frame.size.width - 60, 160))
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,16 +38,6 @@ class LandingViewController: UIViewController, FBSDKLoginButtonDelegate {
                 print("fetched user:\(result)");
                 
                 let avatarURL = "https://graph.facebook.com/\(result.objectForKey("id")!)/picture?type=large"
-                
-                // login to AppFriends
-                HCWidget.sharedWidget().loginWithUserInfo(
-                    [
-                        kHCUserName: result.objectForKey("name")!,
-                        kHCUserAvatar: avatarURL,
-                        kHCUserAppID: result.objectForKey("id")!
-                    ]) { (success, error) in
-                        
-                }
                 
                 let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
                 dispatch_async(dispatch_get_global_queue(priority, 0)) {
@@ -59,11 +57,6 @@ class LandingViewController: UIViewController, FBSDKLoginButtonDelegate {
         center.y += 50
         loginButton.center = center
         self.view .addSubview(loginButton)
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        
-        HCWidget.sharedWidget().showWidgetBubbleOnViewController(self, allowScreenShotSharing: true, atPosition: CGPointMake(self.view.frame.size.width - 60, 160))
     }
     
     

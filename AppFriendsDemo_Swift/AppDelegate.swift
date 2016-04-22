@@ -18,10 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         // find your key and secret in admin panel
-        HCWidget.sharedWidget().initializeWithApplicationKey("db", secret: "3MyNWQkQt4cbdSLiRlfFUAtt", configuration: nil, withLaunchOptions: launchOptions)
+        HCWidget.sharedWidget().initializeWithApplicationKey("p8tnnIRmsl4cJngsH2rxGwtt", secret: "34vRadekQhhQohgDNTCDDQtt", configuration: nil, withLaunchOptions: launchOptions)
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
         
         return true
     }
@@ -51,16 +50,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
         
-        return HCWidget.continueUserActivity(userActivity)
+        return true
+        //return HCWidget.continueUserActivity(userActivity)
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         
         let facebookOpen = FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
         
-        let appFriendsOpen = HCWidget.openURL(url, sourceApplication: sourceApplication, annotation: annotation)
+        //let appFriendsOpen = HCWidget.openURL(url, sourceApplication: sourceApplication, annotation: annotation)
         
-        return facebookOpen || appFriendsOpen
+        return facebookOpen //|| appFriendsOpen
     }
 }
 
