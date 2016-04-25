@@ -32,7 +32,7 @@ class LandingViewController: UIViewController, FBSDKLoginButtonDelegate {
         self.userProfileImageView.clipsToBounds = true
         self.userProfileImageView.layer.cornerRadius = self.userProfileImageView.frame.size.width/2
         
-        FBSDKGraphRequest(graphPath: "me", parameters: nil).startWithCompletionHandler { (connection, result, error) in
+        FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name"]).startWithCompletionHandler { (connection, result, error) in
             
             if (error == nil) {
                 print("fetched user:\(result)");

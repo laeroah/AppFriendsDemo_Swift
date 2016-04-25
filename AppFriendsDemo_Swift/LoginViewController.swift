@@ -53,7 +53,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         else  {
             //login successful
             
-            FBSDKGraphRequest(graphPath: "me", parameters: nil).startWithCompletionHandler { (connection, result, error) in
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name"]).startWithCompletionHandler { (connection, result, error) in
                 
                 if (error == nil) {
                     print("fetched user:\(result)");
