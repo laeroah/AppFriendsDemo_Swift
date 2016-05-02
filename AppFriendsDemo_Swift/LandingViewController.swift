@@ -24,8 +24,6 @@ class LandingViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +32,7 @@ class LandingViewController: UIViewController, FBSDKLoginButtonDelegate {
         self.title = "Demo"
         self.userProfileImageView.clipsToBounds = true
         self.userProfileImageView.layer.cornerRadius = self.userProfileImageView.frame.size.width/2
+    
         
         FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name"]).startWithCompletionHandler { (connection, result, error) in
             
