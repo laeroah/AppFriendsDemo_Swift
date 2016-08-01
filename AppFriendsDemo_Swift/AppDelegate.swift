@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         // find your key and secret in admin panel
-        HCWidget.sharedWidget().initializeWithApplicationKey("p8tnnIRmsl4cJngsH2rxGwtt", secret: "34vRadekQhhQohgDNTCDDQtt", configuration: nil, withLaunchOptions: launchOptions)
+        HCWidget.sharedWidget().initializeWithApplicationKey("gjs8tKQSL7I0bebYtNWZigtt", secret: "QIEgtHh24jqaJKcRQbqXBgtt", configuration: nil, withLaunchOptions: launchOptions)
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
