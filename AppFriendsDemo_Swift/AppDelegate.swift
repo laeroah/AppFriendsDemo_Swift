@@ -10,10 +10,17 @@ import UIKit
 import FBSDKCoreKit
 
 @UIApplicationMain
+
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    static let loginInfo = [
+        kHCUserName: "John Doe",
+        kHCUserAvatar: "http://www.brunningonline.net/simon/blog/archives/South%20Park%20Avatar.jpg",
+        kHCUserAppID: "AnyUniqueIDHere"
+    ]
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         

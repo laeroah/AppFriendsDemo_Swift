@@ -41,6 +41,20 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         super.viewDidAppear(animated)
     }
     
+    @IBAction func loginAsJohnDoe(sender: AnyObject) {
+        
+        // login to AppFriends
+        HCWidget.sharedWidget().loginWithUserInfo(AppDelegate.loginInfo) { (success, error) in
+            
+            if !success {
+                NSLog("login failed: %@", error.localizedDescription)
+            }
+        }
+        
+        self.performSegueWithIdentifier("showLandingSegue", sender: self)
+    }
+    
+    
     //FBSDKLoginButtonDelegate
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         

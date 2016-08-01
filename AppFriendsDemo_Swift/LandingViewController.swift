@@ -32,33 +32,61 @@ class LandingViewController: UIViewController, FBSDKLoginButtonDelegate {
         self.title = "Demo"
         self.userProfileImageView.clipsToBounds = true
         self.userProfileImageView.layer.cornerRadius = self.userProfileImageView.frame.size.width/2
-    
         
-        FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name"]).startWithCompletionHandler { (connection, result, error) in
+        
+        if FBSDKAccessToken.currentAccessToken() != nil {
             
-            if (error == nil) {
-                print("fetched user:\(result)");
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name"]).startWithCompletionHandler { (connection, result, error) in
                 
-                let avatarURL = "https://graph.facebook.com/\(result.objectForKey("id")!)/picture?type=large"
-                
-                let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+                if (error == nil) {
+                    print("fetched user:\(result)");
                     
-                    let avatarImage = UIImage.init(data: NSData(contentsOfURL: NSURL(string: avatarURL)!)!)
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self.userProfileImageView.image = avatarImage
+                    let avatarURL = "https://graph.facebook.com/\(result.objectForKey("id")!)/picture?type=large"
+                    
+                    let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+                    dispatch_async(dispatch_get_global_queue(priority, 0)) {
+                        
+                        let avatarImage = UIImage.init(data: NSData(contentsOfURL: NSURL(string: avatarURL)!)!)
+                        dispatch_async(dispatch_get_main_queue()) {
+                            self.userProfileImageView.image = avatarImage
+                        }
                     }
+                    
                 }
-                
             }
+            
+            let loginButton = FBSDKLoginButton()
+            loginButton.delegate = self
+            var center = self.view.center
+            center.y += 50
+            loginButton.center = center
+            self.view .addSubview(loginButton)
+        
+        }
+        else {
+            
+            let avatarURL = AppDelegate.loginInfo[kHCUserAvatar] as String!
+            
+            let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+            dispatch_async(dispatch_get_global_queue(priority, 0)) {
+                
+                let avatarImage = UIImage.init(data: NSData(contentsOfURL: NSURL(string: avatarURL)!)!)
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.userProfileImageView.image = avatarImage
+                }
+            }
+            
+            let loginButton = UIButton(type: .Custom)
+            loginButton.frame = CGRectMake(0, 0, 100, 40)
+            loginButton.addTarget(self, action: #selector(LandingViewController.loginButtonDidLogOut(_:)), forControlEvents: .TouchUpInside)
+            loginButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+            loginButton.setTitle("Log Out", forState: .Normal)
+            var center = self.view.center
+            center.y += 50
+            loginButton.center = center
+            self.view .addSubview(loginButton)
         }
         
-        let loginButton = FBSDKLoginButton()
-        loginButton.delegate = self
-        var center = self.view.center
-        center.y += 50
-        loginButton.center = center
-        self.view .addSubview(loginButton)
     }
     
     
